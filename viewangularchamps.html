@@ -1,0 +1,68 @@
+
+<html>
+        <head>
+        ​
+          <script 
+            src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+        </head>
+
+
+
+
+
+             <body ng-app="myApp">
+            
+                  <div  ng-controller="tourneyController"> 
+                      <div class="service d-flex h-10">
+                   <select ng-model="selectedItem" ng-options="nut as nut.year for nut in nuts"></select></div>
+                   <table  background="projectpics/carttrophy.gif" border ="8" width ="500" height="100" cellpadding="40" cellspacing="5" Svsides="#efefef" text-align:right>
+                      <tr ng-option="nut in nuts">
+                          <th>Team</th>
+                          <td>{{selectedItem.team}}</td>
+  
+                      </tr>
+                      <tr ng-option="nut in nuts">
+                          <th>Year</th>
+                          <td>{{selectedItem.year}}</td>
+                          
+                      </tr>
+                      <tr ng-option="nut in nuts">
+                          <th>Logo</th>
+                          <td><img src= "projectpics/{{selectedItem.logo}} "+ class="img-fluid"></td>
+                          
+                      </tr>
+                      <tr ng-option="nut in nuts">
+                          <th>Tournament</th>
+                          <td>{{selectedItem.name}}</td>
+                          
+                      </tr>
+
+                      <tr ng-option="nut in nuts">
+                          <th></th>
+                          <td><img src= "projectpics/{{selectedItem.trophy}} "+ class="img-fluid"></td>
+
+                          
+                    
+                  </table>
+                  
+                
+                  <script>
+                  var app = angular.module('myApp',[]);
+                  app.controller('tourneyController', function($scope, $http) 
+                                                   {
+                                                     $http.get("http://localhost:8080/tourneychamp/")
+                                                     .then(  function(response) 
+                                                              
+                                                                {
+                                                                            console.log(response);
+                                                         $scope.nuts = response.data;});
+                                                      });
+                
+                
+                  </script>
+                
+                    
+                    
+                </body>
+  
+  

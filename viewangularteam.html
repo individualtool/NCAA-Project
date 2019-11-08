@@ -1,0 +1,65 @@
+
+<html>
+        <head>
+        ​ ​<link rel="stylesheet" href="css/style.css">
+          <script 
+            src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+        </head>
+
+
+
+
+
+             <body id="demoFontviewteam" ng-app="myApp">
+            
+                  <div  ng-controller="nutsController"> 
+                      <div class="service d-flex h-10">
+                   <select id="demoFontviewteam" ng-model="selectedItem" ng-options="nut as nut.name for nut in nuts"></select></div>
+                   
+
+
+                <table border ="8" width ="800" height="100" cellpadding="40" cellspacing="5" Svsides="#efefef" text-align:center>
+                    <tr>
+                        <th>Name</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Nickname</th>
+                        <th>Logo</th>
+                    </tr>
+                    <tr ng-option="nut in nuts">
+                        <td>{{selectedItem.name}}</td>
+                        <td>{{selectedItem.city}}</td>
+                        <td>{{selectedItem.state}}</td>
+                        <td>{{selectedItem.nickname}}</td>
+                        <td>{{selectedItem.logo}}</td>
+                    </tr>
+                </table>
+               <pre> </pre>
+                  
+
+
+
+                   
+                
+                  
+                
+                  <script>
+                  var app = angular.module('myApp',[]);
+                  app.controller('nutsController', function($scope, $http) 
+                                                   {
+                                                     $http.get("http://localhost:8080/team")
+                                                     .then(  function(response) 
+                                                              
+                                                                {
+                                                                            console.log(response);
+                                                         $scope.nuts = response.data;});
+                                                    });
+                
+                
+                  </script>
+                
+                    
+                    
+                </body>
+  
+  

@@ -1,0 +1,656 @@
+<html>
+        <script 
+        src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+        <link rel="stylesheet" href="practice.css">
+
+
+        <div ng-app="myApp" ng-controller="myCtrl"> 
+
+<body>
+  <header>
+    <!--<div class='half-circle-container'>
+      <div class='half-circle top-circle'>
+        <div></div>
+      </div>
+    </div>-->
+    <div class='header-text'>
+      <h1> NCAA Bracket</h1>
+    </div>
+    <div class='half-circle-container'>
+      <div class='half-circle bottom-circle'>
+        <div></div>
+      </div>
+  </div>
+
+    <div class='tournament tournament-header'>
+      <ul class='round'>
+        <li>First Round</li>
+        <li>Mar 16-18</li>
+      </ul>
+      <ul class='round'>
+        <li>Second Round</li>
+        <li>Mar 17-19</li>
+      </ul>
+      <ul class='round'>
+        <li>Sweet 16</li>
+        <li>Mar 23-25</li>
+      </ul>
+      <ul class='round'>
+        <li>Elite 8</li>
+        <li>Mar 24-26</li>
+      </ul>
+      <ul class='round'>
+        <li>Final 4</li>
+        <li>Apr 1 at Phoenix, AZ</li>
+      </ul>
+      <ul class='round'>
+      </ul>
+      <ul class='round'>
+        <li>National Championship</li>
+        <li>Apr 3 at Phoenix, AZ</li>
+      </ul>
+      <ul class='round'>
+      </ul>
+      <ul class='round'>
+        <li>Final 4</li>
+        <li>Apr 1 at Phoenix, AZ</li>
+      </ul>
+      <ul class='round'>
+        <li>Elite 8</li>
+        <li>Mar 24-26</li>
+      </ul>
+      <ul class='round'>
+        <li>Sweet 16</li>
+        <li>Mar 23-25</li>
+      </ul>
+      <ul class='round'>
+        <li>Second Round</li>
+        <li>Mar 17-19</li>
+      </ul>
+      <ul class='round'>
+        <li>First Round</li>
+        <li>Mar 16-18</li>
+      </ul>
+    </div>
+    <div class='tournament'>
+      <ul class='round seed'>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'>
+          <span>{{myGame[0].seed1}}</span>
+          <span>{{lookUp(myGame[0].team1) +" " + myGame[0].score1}}</span>
+        </li>
+        <li class='game-left game-bottom'>
+          <span>{{myGame[0].seed2}}</span>
+          <span>{{lookUp(myGame[0].team2) +" " + myGame[0].score2}}</span>
+        </li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'>
+          <span>{{myGame[1].seed1}} </span>
+          <span>{{lookUp(myGame[1].team1) +" " + myGame[1].score1}}</span>
+        </li>
+        <li class='game-left game-bottom'>
+          <span>{{myGame[1].seed2}} </span>
+          <span>{{ lookUp(myGame[1].team2) +" " + myGame[1].score2}}</span>
+        </li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'>
+          <span>{{myGame[2].seed1}}</span>
+          <span>{{lookUp(myGame[2].team1) +" " + myGame[2].score1}}</span>
+        </li>
+        <li class='game-left game-bottom'>
+          <span>{{myGame[2].seed2}}</span>
+          <span>{{lookUp(myGame[2].team2) +" " + myGame[2].score2}}</span>
+        </li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'>
+          <span>{{myGame[3].seed1}}</span>
+          <span>{{lookUp(myGame[3].team1) +" " + myGame[3].score1}}</span>
+        </li>
+        <li class='game-left game-bottom'>
+          <span>{{myGame[3].seed2}}</span>
+          <span>{{lookUp(myGame[3].team2) +" " + myGame[3].score2}}</span>
+        </li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'>
+          <span>{{myGame[4].seed1}}</span>
+          <span>{{lookUp(myGame[4].team1) +" " + myGame[4].score1}}</span>
+        </li>
+        <li class='game-left game-bottom'>
+          <span>{{myGame[4].seed2}}</span>
+          <span>{{lookUp(myGame[4].team2) +" " + myGame[4].score2}}</span>
+        </li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'>
+          <span>{{myGame[5].seed1}}</span>
+          <span>{{lookUp(myGame[5].team1) +" " + myGame[5].score1}}</span>
+        </li>
+        <li class='game-left game-bottom'>
+          <span>{{myGame[5].seed2}}</span>
+          <span>{{lookUp(myGame[5].team2) +" " + myGame[5].score2}}</span>
+        </li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'>
+          <span>{{myGame[6].seed1}}</span>
+          <span>{{lookUp(myGame[6].team1) +" " + myGame[6].score1}}</span>
+        </li>
+        <li class='game-left game-bottom'>
+          <span>{{myGame[6].seed2}}</span>
+          <span>{{lookUp(myGame[6].team2) +" " + myGame[6].score2}}</span>
+        </li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'>
+          <span>{{myGame[7].seed1}}</span>
+          <span>{{lookUp(myGame[7].team1) +" " + myGame[7].score1}}</span>
+        </li>
+        <li class='game-left game-bottom'>
+          <span>{{myGame[7].seed2}}</span>
+          <span>{{lookUp(myGame[7].team2) +" " + myGame[5].score2}}</span>
+        </li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'>
+          <span>{{myGame[8].seed1}}</span>
+          <span>{{lookUp(myGame[8].team1) +" " + myGame[8].score1}}</span>
+        </li>
+        <li class='game-left game-bottom'>
+          <span>{{myGame[8].seed2}}</span>
+          <span>{{lookUp(myGame[8].team2) +" " + myGame[8].score2}}</span>
+        </li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'>
+          <span>{{myGame[14].seed1 }}</span>
+          <span>{{ lookUp(myGame[14].team1) +" " + myGame[14].score1}}</span>
+        </li>
+        <li class='game-left game-bottom'>
+          <span>{{myGame[14].seed2}}</span>
+          <span>{{lookUp(myGame[14].team2) +" " + myGame[14].score2}}</span>
+        </li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'>
+          <span>{{myGame[12].seed1}}</span>
+          <span>{{lookUp(myGame[12].team1) +" " + myGame[12].score1}}</span>
+        </li>
+        <li class='game-left game-bottom'>
+          <span>{{myGame[12].seed2}}</span>
+          <span>{{lookUp(myGame[12].team2) +" " + myGame[12].score2}}</span>
+        </li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'>
+          <span>{{myGame[11].seed1}}</span>
+          <span>{{lookUp(myGame[11].team1) +" " + myGame[11].score1}}</span>
+        </li>
+        <li class='game-left game-bottom'>
+          <span>{{myGame[11].seed2}}</span>
+          <span>{{lookUp(myGame[11].team2) +" " + myGame[11].score2}}</span>
+        </li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'>
+          <span>{{myGame[13].seed1}}</span>
+          <span>{{ lookUp(myGame[13].team1) +" " + myGame[13].score1}}</span>
+        </li>
+        <li class='game-left game-bottom'>
+          <span>{{myGame[13].seed2}}</span>
+          <span> {{lookUp(myGame[13].team2) +" " + myGame[13].score2}}</span>
+        </li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'>
+          <span>{{myGame[10].seed1}}</span>
+          <span>{{lookUp(myGame[10].team1) +" " + myGame[10].score1}}</span>
+        </li>
+        <li class='game-left game-bottom'>
+          <span>{{myGame[10].seed2}}</span>
+          <span>{{ lookUp(myGame[10].team2) +" " + myGame[10].score2}}</span>
+        </li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'>
+          <span>{{myGame[15].seed1}}</span>
+          <span>{{lookUp(myGame[15].team1) +" " + myGame[15].score1}}</span>
+        </li>
+        <li class='game-left game-bottom'>
+          <span>{{myGame[15].seed2}}</span>
+          <span>{{lookUp(myGame[15].team2) +" " + myGame[15].score2}}</span>
+        </li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'>
+          <span>{{myGame[9].seed1}}</span>
+          <span>{{lookUp(myGame[9].team1) +" " + myGame[9].score1}}</span>
+        </li>
+        <li class='game-left game-bottom'>
+          <span>{{myGame[9].seed2}} </span>
+          <span>{{myGame[9].seed2 + " " + lookUp(myGame[9].team2) +" " + myGame[9].score2}}</span>
+        </li>
+        <li class='spacer'>&nbsp;</li>
+      </ul>
+      <ul class='round seed'>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'>
+          <span>{{myGame[32].seed1}}</span>
+          <span>{{lookUp(myGame[32].team1) +" " + myGame[32].score1}}</span></li>
+        <li class='game-left spacer'>&nbsp;</li>
+        <li class='game-left game-bottom'>          <span>{{myGame[32].seed2}}</span>
+          <span>{{lookUp(myGame[32].team2) +" " + myGame[32].score2}}</span></li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'><span>{{myGame[35].seed2}}</span>
+          <span>{{lookUp(myGame[35].team2) +" " + myGame[35].score2}}</span></li>
+        <li class='game-left spacer'>&nbsp;</li>
+        <li class='game-left game-bottom'><span>{{myGame[35].seed1}}</span>
+          <span>{{lookUp(myGame[35].team1) +" " + myGame[35].score1}}</span></li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'><span>{{myGame[34].seed2}}</span>
+          <span>{{lookUp(myGame[34].team2) +" " + myGame[34].score2}}</span></li>
+        <li class='game-left spacer'>&nbsp;</li>
+        <li class='game-left game-bottom'><span>{{myGame[34].seed1}}</span>
+          <span>{{lookUp(myGame[34].team1) +" " + myGame[34].score1}}</span></li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'><span>{{myGame[33].seed2}}</span>
+          <span>{{lookUp(myGame[33].team2) +" " + myGame[33].score2}}</span></li>
+        <li class='game-left spacer'>&nbsp;</li>
+        <li class='game-left game-bottom'><span>{{myGame[33].seed1}}</span>
+          <span>{{lookUp(myGame[33].team1) +" " + myGame[33].score1}}</span></li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'><span>{{myGame[36].seed1}}</span>
+          <span>{{lookUp(myGame[36].team1) +" " + myGame[36].score1}}</span></li>
+        <li class='game-left spacer'>&nbsp;</li>
+        <li class='game-left game-bottom'><span>{{myGame[36].seed2}}</span>
+          <span>{{lookUp(myGame[36].team2) +" " + myGame[36].score2}}</span></li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'><span>{{myGame[39].seed2}}</span>
+          <span>{{lookUp(myGame[39].team2) +" " + myGame[39].score2}}</span></li>
+        <li class='game-left spacer'>&nbsp;</li>
+        <li class='game-left game-bottom'><span>{{myGame[39].seed1}}</span>
+          <span>{{lookUp(myGame[39].team1) +" " + myGame[39].score1}}</span></li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'><span>{{myGame[38].seed2}}</span>
+          <span>{{lookUp(myGame[38].team2) +" " + myGame[38].score2}}</span></li>
+        <li class='game-left spacer'>&nbsp;</li>
+        <li class='game-left game-bottom'><span>{{myGame[38].seed1}}</span>
+          <span>{{lookUp(myGame[38].team1) +" " + myGame[38].score1}}</span></li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'><span>{{myGame[37].seed2}}</span>
+          <span>{{lookUp(myGame[37].team2) +" " + myGame[37].score2}}</span></li>
+        <li class='game-left spacer'>&nbsp;</li>
+        <li class='game-left game-bottom'><span>{{myGame[37].seed1}}</span>
+          <span>{{lookUp(myGame[37].team1) +" " + myGame[37].score1}}</span></li>
+        <li class='spacer'>&nbsp;</li>
+      </ul>
+      <ul class='seed round'>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'><span>{{myGame[48].seed1}}</span>
+          <span>{{lookUp(myGame[48].team1) +" " + myGame[48].score1}}</span></li>
+        <li class='game-left spacer'>&nbsp;</li>
+        <li class='game-left game-bottom'><span>{{myGame[48].seed2}}</span>
+          <span>{{lookUp(myGame[48].team2) +" " + myGame[48].score2}}</span></li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'><span>{{myGame[49].seed2}}</span>
+          <span>{{lookUp(myGame[49].team2) +" " + myGame[49].score2}}</span></li>
+        <li class='game-left spacer'>&nbsp;</li>
+        <li class='game-left game-bottom'><span>{{myGame[49].seed1}}</span>
+          <span>{{lookUp(myGame[49].team1) +" " + myGame[49].score1}}</span></li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'><span>{{myGame[50].seed1}}</span>
+          <span>{{lookUp(myGame[50].team1) +" " + myGame[50].score1}}</span></li>
+        <li class='game-left spacer'>&nbsp;</li>
+        <li class='game-left game-bottom'><span>{{myGame[50].seed2}}</span>
+          <span>{{lookUp(myGame[50].team2) +" " + myGame[50].score2}}</span></li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'><span>{{myGame[51].seed1}}</span>
+          <span>{{lookUp(myGame[51].team1) +" " + myGame[51].score1}}</span></li>
+        <li class='game-left spacer'>&nbsp;</li>
+        <li class='game-left game-bottom'><span>{{myGame[51].seed2}}</span>
+          <span>{{lookUp(myGame[51].team2) +" " + myGame[51].score2}}</span></li>
+        <li class='spacer'>&nbsp;</li>
+      </ul>
+      <ul class='round seed'>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'><span>{{myGame[56].seed1}}</span>
+          <span>{{lookUp(myGame[56].team1) +" " + myGame[56].score1}}</span></li>
+        <li class='game-left spacer region region-right'>East</li>
+        <li class='game-left game-bottom'><span>{{myGame[56].seed2}}</span>
+          <span>{{lookUp(myGame[56].team2) +" " + myGame[56].score2}}</span></li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'><span>{{myGame[57].seed1}}</span>
+          <span>{{lookUp(myGame[57].team1) +" " + myGame[57].score1}}</span></li>
+        <li class='game-left spacer region region-right'>South</li>
+        <li class='game-left game-bottom'><span>{{myGame[57].seed2}}</span>
+          <span>{{lookUp(myGame[57].team2) +" " + myGame[57].score2}}</span></li>
+        <li class='spacer'>&nbsp;</li>
+      </ul>
+      <ul class='round seed'>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'><span>{{myGame[60].seed1}}</span>
+          <span>{{lookUp(myGame[60].team1) +" " + myGame[60].score1}}</span></li>
+        <li class='game-left spacer'>&nbsp;</li>
+        <li class='game-left game-bottom'><span>{{myGame[60].seed2}}</span>
+          <span>{{lookUp(myGame[60].team2) +" " + myGame[60].score2}}</span></li>
+        <li class='spacer'>&nbsp;</li>
+      </ul>
+      <ul class='round seed'>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'><span>{{myGame[62].seed1}}</span>
+          <span>{{lookUp(myGame[62].team1) +" " + myGame[62].score1}}</span></li>
+        <li class='spacer'>&nbsp;</li>
+      </ul>
+      <ul class='round finals'>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game final'>{{lookUp(myGame[0].team1)}}</li>
+        <li class='spacer'>&nbsp;</li>
+      </ul>
+      <ul class='round seed'>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'><span>{{ myGame[62].score2 +" " + lookUp(myGame[62].team2)}}</span>
+          <span>{{myGame[62].seed2}}</span></li>
+        <li class='spacer'>&nbsp;</li>
+      </ul>
+      <ul class='round seed'>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'><span>{{ myGame[61].score1+" " + lookUp(myGame[61].team1)}}</span>
+          <span>{{myGame[61].seed1}}</span></li>
+        <li class='game-right spacer'>&nbsp;</li>
+        <li class='game-right game-bottom'><span>{{ myGame[61].score2 +" " + lookUp(myGame[61].team2)}}</span>
+          <span>{{myGame[61].seed2}}</span></li>
+        <li class='spacer'>&nbsp;</li>
+      </ul>
+      <ul class='round seed'>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'><span>{{ myGame[58].score1 +" " + lookUp(myGame[58].team1)}}</span>
+          <span>{{myGame[58].seed1}}</span></li>
+        <li class='game-right spacer region region-left'>Midwest</li>
+        <li class='game-right game-bottom'><span>{{ myGame[58].score2 +" " + lookUp(myGame[58].team2)}}</span>
+          <span>{{myGame[58].seed2}}</span></li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'><span>{{ myGame[59].score1 +" " + lookUp(myGame[59].team1)}}</span>
+          <span>{{myGame[59].seed1}}</span></li>
+        <li class='game-right spacer region region-left'>West</li>
+        <li class='game-right game-bottom'><span>{{ myGame[59].score2 +" " + lookUp(myGame[59].team2)}}</span>
+          <span>{{myGame[59].seed2}}</span></li>
+        <li class='spacer'>&nbsp;</li>
+      </ul>
+      <ul class='round seed'>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'><span>{{ myGame[52].score1 +" " + lookUp(myGame[52].team1)}}</span>
+          <span>{{myGame[52].seed1}}</span></li>
+        <li class='game-right spacer'>&nbsp;</li>
+        <li class='game-right game-bottom'><span>{{ myGame[52].score2 +" " + lookUp(myGame[52].team2)}}</span>
+          <span>{{myGame[52].seed2}}</span></li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'><span>{{ myGame[53].score2 +" " + lookUp(myGame[53].team2)}}</span>
+          <span>{{myGame[53].seed2}}</span></li>
+        <li class='game-right spacer'>&nbsp;</li>
+        <li class='game-right game-bottom'><span>{{ myGame[53].score1 +" " + lookUp(myGame[53].team1)}}</span>
+          <span>{{myGame[53].seed1}}</span></li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'><span>{{ myGame[54].score1 +" " + lookUp(myGame[54].team1)}}</span>
+          <span>{{myGame[54].seed1}}</span></li>
+        <li class='game-right spacer'>&nbsp;</li>
+        <li class='game-right game-bottom'><span>{{ myGame[54].score2 +" " + lookUp(myGame[54].team2)}}</span>
+          <span>{{myGame[54].seed2}}</span></li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'><span>{{ myGame[55].score2 +" " + lookUp(myGame[55].team2)}}</span>
+          <span>{{myGame[55].seed2}}</span></li>
+        <li class='game-right spacer'>&nbsp;</li>
+        <li class='game-right game-bottom'><span>{{ myGame[55].score1 +" " + lookUp(myGame[55].team1)}}</span>
+          <span>{{myGame[55].seed1}}</span></li>
+        <li class='spacer'>&nbsp;</li>
+      </ul>
+      <ul class='round seed'>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'><span>{{ myGame[40].score1 +" " + lookUp(myGame[40].team1)}}</span>
+          <span>{{myGame[40].seed1}}</span></li>
+        <li class='game-right spacer'>&nbsp;</li>
+        <li class='game-right game-bottom'><span>{{ myGame[40].score2 +" " + lookUp(myGame[40].team2)}}</span>
+          <span>{{myGame[40].seed2}}</span></li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'><span>{{ myGame[43].score2 +" " + lookUp(myGame[43].team2)}}</span>
+          <span>{{myGame[43].seed2}}</span></li>
+        <li class='game-right spacer'>&nbsp;</li>
+        <li class='game-right game-bottom'><span>{{ myGame[43].score1 +" " + lookUp(myGame[43].team1)}}</span>
+          <span>{{myGame[43].seed1}}</span></li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'><span>{{ myGame[42].score2 +" " + lookUp(myGame[42].team2)}}</span>
+          <span>{{myGame[42].seed2}}</span></li>
+        <li class='game-right spacer'>&nbsp;</li>
+        <li class='game-right game-bottom'><span>{{ myGame[42].score1 +" " + lookUp(myGame[42].team1)}}</span>
+          <span>{{myGame[42].seed1}}</span></li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'><span>{{ myGame[41].score2 +" " + lookUp(myGame[41].team2)}}</span>
+          <span>{{myGame[41].seed2}}</span></li>
+        <li class='game-right spacer'>&nbsp;</li>
+        <li class='game-right game-bottom'><span>{{ myGame[41].score1 +" " + lookUp(myGame[41].team1)}}</span>
+          <span>{{myGame[41].seed1}}</span></li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'><span>{{ myGame[44].score1 +" " + lookUp(myGame[44].team1)}}</span>
+          <span>{{myGame[44].see1}}</span></li>
+        <li class='game-right spacer'>&nbsp;</li>
+        <li class='game-right game-bottom'><span>{{ myGame[44].score2 +" " + lookUp(myGame[44].team2)}}</span>
+          <span>{{myGame[44].seed2}}</span></li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'><span>{{ myGame[47].score2 +" " + lookUp(myGame[47].team2)}}</span>
+          <span>{{myGame[47].seed2}}</span></li>
+        <li class='game-right spacer'>&nbsp;</li>
+        <li class='game-right game-bottom'><span>{{ myGame[47].score1 +" " + lookUp(myGame[47].team1)}}</span>
+          <span>{{myGame[47].seed1}}</span></li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'><span>{{ myGame[46].score2 +" " + lookUp(myGame[46].team2)}}</span>
+          <span>{{myGame[46].seed2}}</span></li>
+        <li class='game-right spacer'>&nbsp;</li>
+        <li class='game-right game-bottom'><span>{{ myGame[46].score1 +" " + lookUp(myGame[46].team1)}}</span>
+          <span>{{myGame[46].seed1}}</span></li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'><span>{{ myGame[45].score2 +" " + lookUp(myGame[45].team2)}}</span>
+          <span>{{myGame[45].seed2}}</span></li>
+        <li class='game-right spacer'>&nbsp;</li>
+        <li class='game-right game-bottom'><span>{{ myGame[45].score1 +" " + lookUp(myGame[45].team1)}}</span>
+          <span>{{myGame[45].seed1}}</span></li>
+        <li class='spacer'>&nbsp;</li>
+      </ul>
+      <ul class='round seed'>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'>
+            <span>{{ myGame[16].score1 +" " + lookUp(myGame[16].team1)}}</span>
+            <span>{{myGame[16].seed1}}</span>
+        </li>
+        <li class='game-right game-bottom'>
+            <span>{{ myGame[16].score2 +" " + lookUp(myGame[16].team2)}}</span>
+            <span>{{myGame[16].seed2}}</span>
+        </li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'>
+            <span>{{ myGame[23].score1 +" " + lookUp(myGame[23].team1)}}</span>
+            <span>{{myGame[23].seed1}}</span>
+        </li>
+        <li class='game-right game-bottom'>
+            <span>{{ myGame[23].score2 +" " + lookUp(myGame[23].team2)}}</span>
+            <span>{{myGame[23].seed2}}</span>
+        </li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'>
+            <span>{{ myGame[20].score1 +" " + lookUp(myGame[20].team1)}}</span>
+            <span>{{myGame[20].seed1}}</span>
+        </li>
+        <li class='game-right game-bottom'>
+            <span>{{ myGame[20].score2 +" " + lookUp(myGame[20].team2)}}</span>
+            <span>{{myGame[20].seed2}}</span>
+        </li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'>
+            <span>{{ myGame[19].score1 +" " + lookUp(myGame[19].team1)}}</span>
+            <span>{{myGame[19].seed1}}</span>
+        </li>
+        <li class='game-right game-bottom'>
+            <span>{{ myGame[19].score2 +" " + lookUp(myGame[19].team2)}}</span>
+            <span>{{myGame[19].seed2}}</span>
+        </li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'>
+            <span>{{ myGame[21].score1 +" " + lookUp(myGame[21].team1)}}</span>
+            <span>{{myGame[21].seed1}}</span>
+        </li>
+        <li class='game-right game-bottom'>
+            <span>{{ myGame[21].score2 +" " + lookUp(myGame[21].team2)}}</span>
+            <span>{{myGame[21].seed2}}</span>
+        </li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'>
+            <span>{{ myGame[18].score1 +" " + lookUp(myGame[18].team1)}}</span>
+            <span>{{myGame[18].seed1}}</span>
+        </li>
+        <li class='game-right game-bottom'>
+            <span>{{ myGame[18].score2 +" " + lookUp(myGame[18].team2)}}</span>
+            <span>{{myGame[18].seed2}}</span>
+        </li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'>
+            <span>{{ myGame[22].score1 +" " + lookUp(myGame[22].team1)}}</span>
+            <span>{{myGame[22].seed1}}</span>
+        </li>
+        <li class='game-right game-bottom'>
+            <span>{{ myGame[22].score2 +" " + lookUp(myGame[22].team2)}}</span>
+            <span>{{myGame[22].seed2}}</span>
+        </li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'>
+            <span>{{ myGame[17].score1 +" " + lookUp(myGame[17].team1)}}</span>
+            <span>{{myGame[17].seed1}}</span>
+        </li>
+        <li class='game-right game-bottom'>
+            <span>{{ myGame[17].score2 +" " + lookUp(myGame[17].team2)}}</span>
+            <span>{{myGame[17].seed2}}</span>
+        </li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'>
+            <span>{{ myGame[24].score1 +" " + lookUp(myGame[24].team1)}}</span>
+            <span>{{myGame[24].seed1}}</span>
+        </li>
+        <li class='game-right game-bottom'>
+            <span>{{ myGame[24].score2 +" " + lookUp(myGame[24].team2)}}</span>
+            <span>{{myGame[24].seed2}}</span>
+        </li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'>
+            <span>{{ myGame[31].score1 +" " + lookUp(myGame[31].team1)}}</span>
+            <span>{{myGame[31].seed1}}</span>
+        </li>
+        <li class='game-right game-bottom'>
+            <span>{{ myGame[31].score2 +" " + lookUp(myGame[31].team2)}}</span>
+            <span>{{myGame[31].seed2}}</span>
+        </li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'>
+            <span>{{ myGame[28].score1 +" " + lookUp(myGame[28].team1)}}</span>
+            <span>{{myGame[28].seed1}}</span>
+        </li>
+        <li class='game-right game-bottom'>
+            <span>{{ myGame[28].score2 +" " + lookUp(myGame[28].team2)}}</span>
+            <span>{{myGame[28].seed2}}</span>
+        </li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'>
+            <span>{{ myGame[27].score1 +" " + lookUp(myGame[27].team1)}}</span>
+            <span>{{myGame[27].seed1}}</span>
+        </li>
+        <li class='game-right game-bottom'>
+            <span>{{ myGame[27].score2 +" " + lookUp(myGame[27].team2)}}</span>
+            <span>{{myGame[27].seed2}}</span>
+        </li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'>
+            <span>{{ myGame[29].score1 +" " + lookUp(myGame[29].team1)}}</span>
+            <span>{{myGame[29].seed1}}</span>
+        </li>
+        <li class='game-right game-bottom'>
+            <span>{{ myGame[29].score2 +" " + lookUp(myGame[29].team2)}}</span>
+            <span>{{myGame[29].seed2}}</span>
+        </li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'>
+            <span>{{ myGame[26].score1 +" " + lookUp(myGame[26].team1)}}</span>
+            <span>{{myGame[26].seed1}}</span>
+        </li>
+        <li class='game-right game-bottom'>
+            <span>{{ myGame[26].score2 +" " + lookUp(myGame[26].team2)}}</span>
+            <span>{{myGame[26].seed2}}</span>
+        </li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'>
+            <span>{{ myGame[30].score1 +" " + lookUp(myGame[30].team1)}}</span>
+            <span>{{myGame[30].seed1}}</span>
+        </li>
+        <li class='game-right game-bottom'>
+            <span>{{ myGame[30].score2 +" " + lookUp(myGame[30].team2)}}</span>
+            <span>{{myGame[30].seed2}}</span>
+        </li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'>
+            <span>{{ myGame[25].score1 +" " + lookUp(myGame[25].team1)}}</span>
+            <span>{{myGame[25].seed1}}</span>
+        </li>
+        <li class='game-right game-bottom'>
+            <span>{{ myGame[25].score2 +" " + lookUp(myGame[25].team2)}}</span>
+            <span>{{myGame[25].seed2}}</span>
+        </li>
+        <li class='spacer'>&nbsp;</li>
+      </ul>
+    </div>
+  </section>
+
+
+  <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope, $http) {
+          $http.get("http://localhost:8080/game/1")
+          .then(function(response) {
+              $scope.myGame = response.data;
+          });
+
+          $http.get("http://localhost:8080/team")
+          .then(function(response) {
+              $scope.myTeam = response.data;
+          });        
+
+
+          $scope.BDE = function(){
+            $scope.swing = "Woosh";
+          }
+
+
+$scope.lookUp = function(tid){
+  console.log(tid);
+  console.log($scope.myTeam);
+  var checkThis = $scope.myTeam;
+  for(var ck = 0; ck < checkThis.length; ck ++){
+    if (checkThis[ck].id == tid){
+    console.log(ck);
+    return checkThis[ck].name;
+    }
+  }
+  return 'ddd';
+}
+});
+</script>
+
+
+
+
+
+<div id="H0"  style="position:absolute; top:440px; left:690px; ">
+
+
+    <p><a href= "index.html" class="myButton">Home</a></p></div>
+    <style>
+      .myButton {
+          color: rgb(241, 111, 4); font-size: 30px; line-height: 20px; padding: 24px; border-radius: 12px; font-family: Georgia, serif; font-weight: normal; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; background-image: linear-gradient(to right, rgb(26, 20, 102) 0%, rgb(26, 24, 131) 50%, rgb(2, 20, 11) 100%); box-shadow: rgb(41, 23, 141) 5px 5px 15px 5px; border: 2px solid rgb(2, 94, 37); display: inline-block;}
+          .myButton:hover {
+          background: rgb(214, 228, 218); }
+          .myButton:active {
+            background: rgb(219, 231, 222); }
+  </style>
+  
+    
+      
+  
+
+
+
+
+
+</body
+</html>
