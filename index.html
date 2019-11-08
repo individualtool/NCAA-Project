@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <html>
+          <head>
+          ​
+            <script 
+              src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+          </head>
+          ​
+    <title>NCAA &mdash; Tournament</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Arbutus+Slab|Open+Sans:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    
+  </head>
+  <body id="grad1" data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+  
+
+
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+   
+    <header id="grad1" class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
+
+      <div class="container-fluid">
+        <div class="row align-items-center justify-content-center">
+            
+          <div class="">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+              <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="#services-section" class="nav-link">View Teams</a></li>
+                <li><a href="#about-section" class="nav-link">Add Teams</a></li>
+                
+
+
+              </ul>
+            </nav>
+          </div>
+
+          <div class=" text-center mx-5">
+            <h1 class="m-0 site-logo"><img src="images/bball.png" alt="Image" class="img-fluid"></h1>
+          </div>
+
+          <div class="text-left">
+
+            <nav class="site-navigation position-relative" role="navigation">
+              <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+                <li><a href="#portfolio-section" class="nav-link">Photos</a></li>
+                <li><a href="#clients-section" class="nav-link">View Games</a></li>
+                <li><a href="#contact-section" class="nav-link">View Champs</a></li>
+              </ul>
+            </nav>
+
+
+            <div class="d-inline-block d-lg-none" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle float-right"><span class="icon-menu h3"></span></a></div>
+
+          </div>
+
+        </div>
+      </div>
+      
+    </header>
+
+
+    <div id="grad1" class="site-blocks-cover overlay bg-light" id="home-section">
+
+      <div class="container">
+        <div class="row justify-content-center">
+
+          <div class="col-md-12 mt-lg-5 text-left align-self-center text-intro">
+            <div class="row">
+              <div class="col-lg-6">
+                <h1 class="text-black">In Your Hands<br> Tournament</h1>
+                <p class="lead">Start Your Tournament Here</p>
+                <div class="btn smoothscroll btn-primary">
+                <p><a href= "practice.html">Play</a></p>
+                <audio controls autolay loop>
+                <source src="ncaamp3.mp3" type="audio/mp3" />
+        </audio>
+        
+
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+
+      <img id="democ" src="projectpics/ballinhand.jpg" class="img-face" data-aos="fade" width="810" height="600" >
+    
+      
+    </div>  
+
+    
+
+    
+    <div class="site-section" id="services-section">
+      <div class="container">
+        <div class="row ">
+          <div class="col-12 mb-5 position-relative">
+            <h2 class="section-title text-center mb-5">View Teams</h2>
+          </div>
+          
+          <div class="col-md-6 mb-4">
+            
+              <body id="demoFontviewteam" ng-app="myApp">
+            
+                  <div  ng-controller="nutsController"> 
+                      
+                 
+
+                <table border ="20" width ="800" height="100" cellpadding="40" cellspacing="5" Svsides="#d9831e" text-align:center>
+                    <th> <select id="demoFontviewteam" ng-model="selectedItem" ng-options="nut as nut.name for nut in nuts | orderBy : 'name'">{{nut.name}}</select></th></div>
+                    <tr ng-option="nut in nuts">
+                        <th>Name</th>
+                        <th>{{selectedItem.name}}</th>
+
+                    </tr>
+                    <tr ng-option="nut in nuts">
+                        <th>City</th>
+                        <th>{{selectedItem.city}}</th>
+                        
+                    </tr>
+                    <tr ng-option="nut in nuts">
+                        <th>State</th>
+                        <th>{{selectedItem.state}}</th>
+                        
+                    </tr>
+                    <tr ng-option="nut in nuts">
+                        <th>Nickname</th>
+                        <th>{{selectedItem.nickname}}</th>
+                        
+                    </tr>
+                    <tr ng-option="nut in nuts">
+                        <th>Logo</th>
+                        <td><img src= "projectpics/{{selectedItem.logo}} "+ class="img-fluid"></td>
+                        
+                    </tr>
+                </table>
+             
+
+                
+                  <script>
+                  var app = angular.module('myApp',[]);
+                  app.controller('nutsController', function($scope, $http) 
+                                                   {
+                                                     $http.get("http://localhost:8080/team")
+                                                     .then(  function(response) 
+                                                              
+                                                                {
+                                                                            console.log(response);
+                                                         $scope.nuts = response.data;});
+
+
+                  $scope.Name = null;
+                  $scope.City = null;
+                  $scope.State = null;
+                  $scope.Nickname = null;
+                  $scope.Logo = null;
+      
+                  $scope.makeTeam = function (Name, City, State, Nickname, Logo){
+                    var url = 'http://localhost:8080/Newteam/'+Name+'/'+City+'/'+State+'/'+Nickname+'/'+Logo
+                    
+      
+                    console.log(url);
+                   
+      //Call the services
+    
+    $http.post(url).then(function (response) {
+    
+    if (response.data)
+    $scope.output = response.data;
+    $scope.msg = "Team Added!";
+    
+    }, function (response) {
+    
+    $scope.msg = "Incorrect Entry";
+    
+    $scope.statusval = response.status;
+    
+    $scope.statustext = response.statusText;
+    
+    $scope.headers = response.headers();
+    
+    });
+    
+    };
+
+
+              $scope.ID = null;
+              $scope.makeURL = function (ID){
+                var url = 'http://localhost:8080/teamgame/'+ID
+                
+  
+                console.log(url);
+               
+  //Call the services
+
+$http.get(url).then(function (response) {
+
+if (response.data)
+$scope.output = response.data;
+$scope.msg = "Team Edited!";
+
+}, function (response) {
+
+$scope.msg = "Invalid Response";
+
+$scope.statusval = response.status;
+
+$scope.statustext = response.statusText;
+
+$scope.headers = response.headers();
+
+});
+
+};
+                                                     $http.get("http://localhost:8080/tourneychamp/")
+                                                     .then(  function(response) 
+                                                              
+                                                                {
+                                                                            console.log(response);
+                                                         $scope.tourneys = response.data;});
+
+
+
+                    $scope.Name = null;
+                    $scope.City = null;
+                    $scope.State = null;
+                    $scope.Nickname = null;
+                    $scope.Logo = null;
+                    $scope.id = null;
+        
+                    $scope.makeEdit = function (Name, City, State, Nickname, Logo, id){
+                      var url = 'http://localhost:8080/updateteam/'+Name+'/'+City+'/'+State+'/'+Nickname+'/'+Logo+'/'+id
+                      
+        
+                      console.log(url);
+                     
+        //Call the services
+      
+      $http.put(url).then(function (response) {
+      
+      if (response.data)
+      $scope.output = response.data;
+      $scope.msg = "Put Data Method Executed Successfully!";
+      
+      }, function (response) {
+      
+      $scope.msg = "Service not Exists";
+      
+      $scope.statusval = response.status;
+      
+      $scope.statustext = response.statusText;
+      
+      $scope.headers = response.headers();
+      
+      });
+      
+      };
+
+
+
+
+   });
+                
+
+                                                     
+                                                      
+                
+
+
+
+
+
+
+
+
+
+                
+                  </script>
+                
+                    
+                    
+                </body>
+  
+  
+    
+    
+
+        </div>
+      </div>
+    </div>
+    
+    <div class="site-section" id="about-section">
+      <div class="container">
+        <div class="row ">
+          <div class="col-12 mb-4 position-relative">
+            <h2 class="section-title">Add A Team</h2>
+          </div>
+          <div class="col-lg-4 order-1 order-lg-2 mb-4 mb-lg-0">
+           
+             
+              <body ng-app="myApp" ng-controller="nutsController">
+                  <div >
+              <form>
+                  
+                  <div class="row">
+                      <div class="column" >
+                    
+                  <legend><p> TEAM CREATOR</p></legend>
+                  <p <label for="Name">Name: </label><br /> 
+                  <input ng-model="Name" type="text" value="" /> <br />
+                
+                  <label for="city">City:</label><br /> 
+                  <input ng-model="City" type="text" value="" /> <br /> 
+                  
+                  <label for="state">State:</label><br /> 
+                  <input ng-model="State" type="text" value="" /> <br /> 
+                  
+                  <label for="nickname">Nickname:</label><br /> 
+                  <input ng-model="Nickname" type="text" value="" /> <br /> 
+                  
+                  <label for="logo">Logo:</label><br /> 
+                  <input ng-model="Logo" type="text" value="" /> <br /> 
+                  </p>
+                  <button type="button" value="Submit" ng-click="makeTeam(Name, City, State, Nickname, Logo)">CREATE</button>
+                  {{msg}}
+                  
+                
+                </div>
+                </div>
+            </form>
+    
+                <script type="text/javascript">
+                var app = angular.module('postApp', []);
+                app.controller('postCtrl', function ($scope, $http) { 
+            
+    
+    });
+                </script>
+               </body>
+    
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+    
+
+
+
+
+    <section class="site-section block__62272" id="portfolio-section">
+      
+
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 position-relative">
+            <h2 class="section-title text-center mb-5">Photos</h2>
+          </div>
+        </div>
+
+        
+        <div id="posts" class="row no-gutter">
+          <div class="item web col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
+            <a href="images/gaff.jpg" class="item-wrap fancybox">
+              <span class="icon-search2"></span>
+              <img class="img-fluid" src="images/gaff.jpg">
+            </a>
+          </div>
+          <div class="item web col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
+            <a href="images/macon.jpg" class="item-wrap fancybox">
+              <span class="icon-search2"></span>
+              <img class="img-fluid" src="images/macon.jpg">
+            </a>
+          </div>
+
+          <div class="item brand col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
+            <a href="images/gaff1.jpg" class="item-wrap fancybox">
+              <span class="icon-search2"></span>
+              <img class="img-fluid" src="images/gaff1.jpg">
+            </a>
+          </div>
+
+          <div class="item design col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
+
+            <a href="images/ballwomen.jpg" class="item-wrap fancybox">
+              <span class="icon-search2"></span>
+              <img class="img-fluid" src="images/ballwomen.jpg">
+            </a>
+
+          </div>
+
+          <div class="item web col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
+            <a href="images/ark94.jpg" class="item-wrap fancybox">
+              <span class="icon-search2"></span>
+              <img class="img-fluid" src="images/ark94.jpg">
+            </a>
+          </div>
+
+          <div class="item brand col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
+            <a href="images/ncaawomen.jpg" class="item-wrap fancybox">
+              <span class="icon-search2"></span>
+              <img class="img-fluid" src="images/ncaawomen.jpg">
+            </a>
+          </div>
+
+          <div class="item web col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
+            <a href="images/bballslide.jpg" class="item-wrap fancybox">
+              <span class="icon-search2"></span>
+              <img class="img-fluid" src="images/bballslide.jpg">
+            </a>
+          </div>
+
+          <div class="item design col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
+            <a href="images/duke.jpg" class="item-wrap fancybox">
+              <span class="icon-search2"></span>
+              <img class="img-fluid" src="images/duke.jpg">
+            </a>
+          </div>
+
+          <div class="item web col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
+            <a href="images/coach.jpg" class="item-wrap fancybox">
+              <span class="icon-search2"></span>
+              <img class="img-fluid" src="images/coach.jpg">
+            </a>
+          </div>
+
+
+          <div class="item web col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
+            <a href="projectpics/wochamp.jpg" class="item-wrap fancybox">
+              <span class="icon-search2"></span>
+              <img class="img-fluid" src="projectpics/wochamp.jpg">
+            </a>
+          </div>
+
+          
+        </div>
+      </div>
+
+    </section>
+
+
+    <section class="site-section bg-dark">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 mb-5 position-relative">
+            <h2 class="section-title text-center mb-5 text-white">Inspirational Quotes</h2>
+          </div>
+        </div>
+        <div class="owl-carousel slide-one-item">
+          <div class="slide">
+            <blockquote>
+              <p>I asked a ref if he could give me a technical foul for thinking bad things about him. He said, of course not. I said, well, I think you stink. And he gave me a technical. You can't trust em.</p>
+              <p><cite>&mdash; Jim Valvano</cite></p>
+            </blockquote>
+          </div>
+          <div class="slide">
+            <blockquote>
+              <p>I've always had an a**-to-the-brain theory. When a player's a** gets put on the bench, a message goes straight to the brain saying, ‘Get me off of here.</p>
+              <p><cite>&mdash; Bobby Knight</cite></p>
+            </blockquote>
+          </div>
+          <div class="slide">
+            <blockquote>
+              <p>When you first assemble a group, it’s not a team right off the bat. It’s only a collection of individuals.</p>
+              <p><cite>&mdash; Mike Krzyzewski</cite></p>
+            </blockquote>
+          </div>
+          <div class="slide">
+            <blockquote>
+              <p>Be more concerned with your character than your reputation, because your character is what you really are, while your reputation is merely what others think you are.</p>
+              <p><cite>&mdash; John Wooden</cite></p>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="site-section"  id="clients-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 mb-5 position-relative">
+            <h2 class="section-title text-center">View Matchups</h2>
+          </div>
+          <body>
+              <div  ng-app="myApp" ng-controller="nutsController">
+          <form>
+              
+              
+              <legend><p> SELECT TOURNAMENT ID</p></legend>
+              <p <label for="Name">ID: </label><br /> 
+              <input ng-model="ID" type="text" value="" /> <br />
+
+              </p>
+              <button type="button" value="Submit" ng-click="makeURL(ID)">RETRIEVE</button>
+             
+              <table border ="20" width ="800" height="80" cellpadding="20" cellspacing="5" Svsides="#efefef" text-align:center>
+                  <tr>
+                      <th>Name</th>
+                      <th>City</th>
+                      <th>State</th>
+                      <th>Nickname</th>
+                      <th>Logo</th>
+                  </tr>
+                  <tr ng-repeat="nut in output">
+                      <th>{{nut.name}}</th>
+                      <th>{{nut.city}}</th>
+                      <th>{{nut.state}}</th>
+                      <th>{{nut.nickname}}</th>
+                      <td><img src= "projectpics/{{nut.logo}} "></td>
+                  </tr>
+              </table>
+             <pre> </pre>
+            
+            </div>
+        </form>
+
+            <script type="text/javascript">
+            var app = angular.module('postApp', []);
+            app.controller('postCtrl', function ($scope, $http) { 
+
+
+});
+            </script>
+           </body>
+    </section>
+
+    
+
+    <section class="site-section" id="contact-section">
+      <div id="demoFontviewteam" class="container">
+        <div class="row">
+          <div class="col-12 mb-5 position-relative">
+            <h2 class="section-title text-center mb-5">NCAA Champions From Past 30 Years</h2>
+          </div>
+        </div>
+        <div  ng-app="myApp" ng-controller="nutsController"> 
+            
+        </div>
+         <table  background="projectpics/carttrophy.gif" border ="20" width ="500" height="100" cellpadding="40" cellspacing="5" Svsides="#efefef" text-align:right>
+          <th> <select  ng-model="selectedItem" ng-options="nut as nut.year for nut in tourneys"></select></th>
+            <tr ng-option="nut in tourneys">
+                <th>Team</th>
+                <td>{{selectedItem.team}}</td>
+
+            </tr>
+            <tr ng-option="nut in tourneys">
+                <th>Year</th>
+                <td>{{selectedItem.year}}</td>
+                
+            </tr>
+            <tr ng-option="nut in tourneys">
+                <th>Mascot</th>
+                <td><img src= "projectpics/{{selectedItem.logo}} " ></td>
+                
+            </tr>
+            <tr ng-option="nut in tourneys">
+                <th>Tournament</th>
+                <td>{{selectedItem.name}}</td>
+                
+            </tr>
+
+            <tr ng-option="nut in tourneys">
+                <th></th>
+                <td><img src= "projectpics/{{selectedItem.trophy}} "+ class="img-fluid"></td>
+
+                
+          
+        </table>
+      </div>
+    </section>
+
+
+    <div ng-app="myApp" ng-controller="nutsController">
+      <form>
+          
+          
+          <legend><p> NCAA TEAM EDITOR</p></legend>
+          <p <label for="Name">Name: </label><br /> 
+          <input ng-model="Name" type="text" value="" /> <br />
+        
+          <label for="city">City:</label><br /> 
+          <input ng-model="City" type="text" value="" /> <br /> 
+          
+          <label for="state">State:</label><br /> 
+          <input ng-model="State" type="text" value="" /> <br /> 
+          
+          <label for="nickname">Nickname:</label><br /> 
+          <input ng-model="Nickname" type="text" value="" /> <br /> 
+          
+          <label for="logo">Logo:</label><br /> 
+          <input ng-model="Logo" type="text" value="" /> <br /> 
+
+          <label for="id">ID:</label><br /> 
+          <input ng-model="id" type="text" value="" /> <br /> 
+          </p>
+          <button type="button" value="Submit" ng-click="makeEdit(Name, City, State, Nickname, Logo, id)">EDIT</button>
+          {{msg}}
+          
+        
+        
+        </div>
+    </form>
+  
+
+
+
+
+
+    
+          </div>
+          <div class="col-md-3">
+            <h3 class="footer-title">Follow Me</h3>
+            <a href="http://www.twitter.com" class="social-circle"><span class="icon-twitter"></span></a>
+            <a href="http://www.facebook.com" class="social-circle"><span class="icon-facebook"></span></a>
+            <a href="http://www.instagram.com" class="social-circle"><span class="icon-instagram"></span></a>
+            <a href="http://www.espn.com" class="social-circle"><span class="icon-dribbble"></span></a>
+            <a href="http://www.linkedin.com/feed/" class="social-circle"><span class="icon-linkedin"></span></a>
+          </div>
+        </div>
+
+
+
+
+        
+        <div class="row">
+          <div class="col-12 text-center">
+    
+            </div>
+        </div>
+      </div>
+    </footer>
+
+  </div> <!-- .site-wrap -->
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
+  <script src="js/jquery.sticky.js"></script>
+  <script src="js/isotope.pkgd.min.js"></script>
+
+  
+  <script src="js/main.js"></script>
+    
+  </body>
+</html>

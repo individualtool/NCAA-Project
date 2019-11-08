@@ -1,0 +1,83 @@
+
+<html>
+        <head>
+        ​<link rel="stylesheet" href="css/style.css">
+          <script 
+            src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+        </head>
+
+        
+        <body>
+                <div  ng-app="postApp" ng-controller="postCtrl">
+            <form>
+                
+                
+                <legend><p> NCAA GAME VIEWER</p></legend>
+                <p <label for="Name">ID: </label><br /> 
+                <input ng-model="ID" type="text" value="" /> <br />
+
+                </p>
+                <button type="button" value="Submit" ng-click="makeURL(ID)">GO</button>
+               
+                <table border ="8" width ="800" height="100" cellpadding="40" cellspacing="5" Svsides="#efefef" text-align:center>
+                    <tr>
+                        <th>Name</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Nickname</th>
+                        <th>Logo</th>
+                    </tr>
+                    <tr ng-repeat="nut in output">
+                        <td>{{nut.name}}</td>
+                        <td>{{nut.city}}</td>
+                        <td>{{nut.state}}</td>
+                        <td>{{nut.nickname}}</td>
+                        <td>{{nut.logo}}</td>
+                    </tr>
+                </table>
+               <pre> </pre>
+                  
+         
+
+                
+              
+              
+              </div>
+          </form>
+  
+              <script type="text/javascript">
+              var app = angular.module('postApp', []);
+              app.controller('postCtrl', function ($scope, $http) { 
+                $scope.ID = null;
+                $scope.makeURL = function (ID){
+                  var url = 'http://localhost:8080/teamgame/'+ID
+                  
+    
+                  console.log(url);
+                 
+    //Call the services
+  
+  $http.get(url).then(function (response) {
+  
+  if (response.data)
+  $scope.output = response.data;
+  $scope.msg = "Put Data Method Executed Successfully!";
+  
+  }, function (response) {
+  
+  $scope.msg = "Service not Exists";
+  
+  $scope.statusval = response.status;
+  
+  $scope.statustext = response.statusText;
+  
+  $scope.headers = response.headers();
+  
+  });
+  
+  };
+  
+  });
+              </script>
+             </body>
+  

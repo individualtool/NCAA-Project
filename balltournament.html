@@ -1,0 +1,312 @@
+<!DOCTYPE html >
+<html>
+<meta >
+<head>
+    <script 
+    src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    ​
+
+
+        
+  <title>NCAA TOURNEY </title>
+</head>
+<body>
+    <style type = "text/css">
+        body {
+            background: url(images/newball.jpg) repeat center fixed; 
+
+ background-size: 50%;
+}
+p { 
+color: #F0F8FF
+}
+
+
+
+
+    </style>
+<!-- Div info -->
+
+
+
+
+
+
+
+<div ng-app="myApp" ng-controller="myCtrl"> 
+
+
+
+
+    <div  id="DivInfo"   style="position:absolute; top:10px; left:1180px; width:300px; height:60px; "><FONT face="verdana" SIZE="10" COLOR="000000">NCAA Tournament</FONT></div>
+  
+
+
+<!-- round1 east -->
+
+<div id="H16" style="position:absolute; top:10px;  left:10px ; width:200px; height:15px; border:3px solid rgb(12, 11, 11); "><FONT SIZE="3" COLOR="000000">{{myGame[0].seed1 + " " + lookUp(myGame[0].team1) +" " + myGame[0].score1}}</FONT></div>
+<div id="H18" style="position:absolute; top:75px;  left:10px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[0].seed2 + " " + lookUp(myGame[0].team2) +" " + myGame[0].score2}}</FONT></div>
+<div id="H20" style="position:absolute; top:105px; left:10px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[1].seed1 + " " + lookUp(myGame[1].team1) +" " + myGame[1].score1}}</FONT></div>
+<div id="H22" style="position:absolute; top:170px; left:10px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[1].seed2 + " " + lookUp(myGame[1].team2) +" " + myGame[1].score2}}</FONT></div>
+<div id="H24" style="position:absolute; top:200px; left:10px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[2].seed1 + " " + lookUp(myGame[2].team1) +" " + myGame[2].score1}}</FONT></div>
+<div id="H26" style="position:absolute; top:265px; left:10px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[2].seed2 + " " + lookUp(myGame[2].team2) +" " + myGame[2].score2}}</FONT></div>
+<div id="H28" style="position:absolute; top:295px; left:10px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[3].seed1 + " " + lookUp(myGame[3].team1) +" " + myGame[3].score1}}</FONT></div>
+<div id="H30" style="position:absolute; top:360px; left:10px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[3].seed2 + " " + lookUp(myGame[3].team2) +" " + myGame[3].score2}}</FONT></div>
+<div id="H17" style="position:absolute; top:390px; left:10px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[4].seed1 + " " + lookUp(myGame[4].team1) +" " + myGame[4].score1}}</FONT></div>
+<div id="H19" style="position:absolute; top:455px; left:10px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[4].seed2 + " " + lookUp(myGame[4].team2) +" " + myGame[4].score2}}</FONT></div>
+<div id="H21" style="position:absolute; top:485px; left:10px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[5].seed1 + " " + lookUp(myGame[5].team1) +" " + myGame[5].score1}}</FONT></div>
+<div id="H23" style="position:absolute; top:550px; left:10px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[5].seed2 + " " + lookUp(myGame[5].team2) +" " + myGame[5].score2}}</FONT></div>
+<div id="H25" style="position:absolute; top:580px; left:10px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[6].seed1 + " " + lookUp(myGame[6].team1) +" " + myGame[6].score1}}</FONT></div>
+<div id="H27" style="position:absolute; top:645px;left:10px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[6].seed2 + " " + lookUp(myGame[6].team2) +" " + myGame[6].score2}}</FONT></div>
+<div id="H28" style="position:absolute; top:675px;left:10px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[7].seed1 + " " + lookUp(myGame[7].team1) +" " + myGame[7].score1}}</FONT></div>
+<div id="H31" style="position:absolute; top:740px;left:10px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[7].seed2 + " " + lookUp(myGame[7].team2) +" " + myGame[5].score2}}</FONT></div>
+
+
+
+<!-- round1 south -->
+<div id="H16" style="position:absolute; top:840px;  left:10px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[8].seed1 + " " + lookUp(myGame[8].team1) +" " + myGame[8].score1}}</FONT></div>
+<div id="H18" style="position:absolute; top:905px;  left:10px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[8].seed2 + " " + lookUp(myGame[8].team2) +" " + myGame[8].score2}}</FONT></div>
+<div id="H20" style="position:absolute; top:935px; left:10px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[14].seed1 + " " + lookUp(myGame[14].team1) +" " + myGame[14].score1}}</FONT></div>
+<div id="H22" style="position:absolute; top:1000px; left:10px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[14].seed2 + " " + lookUp(myGame[14].team2) +" " + myGame[14].score2}}</FONT></div>
+<div id="H24" style="position:absolute; top:1030px; left:10px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[12].seed1 + " " + lookUp(myGame[12].team1) +" " + myGame[12].score1}}</FONT></div>
+<div id="H26" style="position:absolute; top:1095px; left:10px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[12].seed2 + " " + lookUp(myGame[12].team2) +" " + myGame[12].score2}}</FONT></div>
+<div id="H28" style="position:absolute; top:1125px; left:10px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[11].seed1 + " " + lookUp(myGame[11].team1) +" " + myGame[11].score1}}</FONT></div>
+<div id="H30" style="position:absolute; top:1190px; left:10px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[11].seed2 + " " + lookUp(myGame[11].team2) +" " + myGame[11].score2}}</FONT></div>
+<div id="H17" style="position:absolute; top:1220px; left:10px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[13].seed1 + " " + lookUp(myGame[13].team1) +" " + myGame[13].score1}}</FONT></div>
+<div id="H19" style="position:absolute; top:1285px; left:10px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[13].seed2 + " " + lookUp(myGame[13].team2) +" " + myGame[13].score2}}</FONT></div>
+<div id="H21" style="position:absolute; top:1315px; left:10px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[10].seed1 + " " + lookUp(myGame[10].team1) +" " + myGame[10].score1}}</FONT></div>
+<div id="H23" style="position:absolute; top:1380px; left:10px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[10].seed2 + " " + lookUp(myGame[10].team2) +" " + myGame[10].score2}}</FONT></div>
+<div id="H25" style="position:absolute; top:1410px; left:10px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[15].seed1 + " " + lookUp(myGame[15].team1) +" " + myGame[15].score1}}</FONT></div>
+<div id="H27" style="position:absolute; top:1475px;left:10px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[15].seed2 + " " + lookUp(myGame[15].team2) +" " + myGame[15].score2}}</FONT></div>
+<div id="H28" style="position:absolute; top:1505px;left:10px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[9].seed1 + " " + lookUp(myGame[9].team1) +" " + myGame[9].score1}}</FONT></div>
+<div id="H31" style="position:absolute; top:1570px;left:10px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[9].seed2 + " " + lookUp(myGame[9].team2) +" " + myGame[9].score2}}</FONT></div>
+
+
+
+<!-- round1 midwest -->
+<div id="H16" style="position:absolute; top:10px;  left:2510px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[16].seed1 + " " + lookUp(myGame[16].team1) +" " + myGame[16].score1}}</FONT></div>
+<div id="H18" style="position:absolute; top:75px;  left:2510px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[16].seed2 + " " + lookUp(myGame[16].team2) +" " + myGame[16].score2}}</FONT></div>
+<div id="H20" style="position:absolute; top:105px; left:2510px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[23].seed1 + " " + lookUp(myGame[23].team1) +" " + myGame[23].score1}}</FONT></div>
+<div id="H22" style="position:absolute; top:170px; left:2510px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[23].seed2 + " " + lookUp(myGame[23].team2) +" " + myGame[23].score2}}</FONT></div>
+<div id="H24" style="position:absolute; top:200px; left:2510px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[20].seed1 + " " + lookUp(myGame[20].team1) +" " + myGame[20].score1}}</FONT></div>
+<div id="H26" style="position:absolute; top:265px; left:2510px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[20].seed2 + " " + lookUp(myGame[20].team2) +" " + myGame[20].score2}}</FONT></div>
+<div id="H28" style="position:absolute; top:295px; left:2510px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[19].seed1 + " " + lookUp(myGame[19].team1) +" " + myGame[19].score1}}</FONT></div>
+<div id="H30" style="position:absolute; top:360px; left:2510px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[19].seed2 + " " + lookUp(myGame[19].team2) +" " + myGame[19].score2}}</FONT></div>
+<div id="H17" style="position:absolute; top:390px; left:2510px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[21].seed1 + " " + lookUp(myGame[21].team1) +" " + myGame[21].score1}}</FONT></div>
+<div id="H19" style="position:absolute; top:455px; left:2510px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[21].seed2 + " " + lookUp(myGame[21].team2) +" " + myGame[21].score2}}</FONT></div>
+<div id="H21" style="position:absolute; top:485px; left:2510px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[18].seed1 + " " + lookUp(myGame[18].team1) +" " + myGame[18].score1}}</FONT></div>
+<div id="H23" style="position:absolute; top:550px; left:2510px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[18].seed2 + " " + lookUp(myGame[18].team2) +" " + myGame[11].score2}}</FONT></div>
+<div id="H25" style="position:absolute; top:580px; left:2510px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[22].seed1 + " " + lookUp(myGame[22].team1) +" " + myGame[22].score1}}</FONT></div>
+<div id="H27" style="position:absolute; top:645px;left:2510px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[22].seed2 + " " + lookUp(myGame[22].team2) +" " + myGame[22].score2}}</FONT></div>
+<div id="H28" style="position:absolute; top:675px;left:2510px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[17].seed1 + " " + lookUp(myGame[17].team1) +" " + myGame[17].score1}}</FONT></div>
+<div id="H31" style="position:absolute; top:740px;left:2510px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[17].seed2 + " " + lookUp(myGame[17].team2) +" " + myGame[17].score2}}</FONT></div>
+
+
+<!-- round1 west -->
+<div id="H16" style="position:absolute; top:840px;  left:2510px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[24].seed1 + " " + lookUp(myGame[24].team1) +" " + myGame[24].score1}}</FONT></div>
+<div id="H18" style="position:absolute; top:905px;  left:2510px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[24].seed2 + " " + lookUp(myGame[24].team2) +" " + myGame[24].score2}}</FONT></div>
+<div id="H20" style="position:absolute; top:935px;  left:2510px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[31].seed1 + " " + lookUp(myGame[31].team1) +" " + myGame[31].score1}}</FONT></div>
+<div id="H22" style="position:absolute; top:1000px; left:2510px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[31].seed2 + " " + lookUp(myGame[31].team2) +" " + myGame[31].score2}}</FONT></div>
+<div id="H24" style="position:absolute; top:1030px; left:2510px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[28].seed1 + " " + lookUp(myGame[28].team2) +" " + myGame[28].score1}}</FONT></div>
+<div id="H26" style="position:absolute; top:1095px; left:2510px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[28].seed2 + " " + lookUp(myGame[28].team2) +" " + myGame[28].score2}}</FONT></div>
+<div id="H28" style="position:absolute; top:1125px; left:2510px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[27].seed1 + " " + lookUp(myGame[27].team1) +" " + myGame[27].score1}}</FONT></div>
+<div id="H30" style="position:absolute; top:1190px; left:2510px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[27].seed2 + " " + lookUp(myGame[27].team2) +" " + myGame[27].score2}}</FONT></div>
+<div id="H17" style="position:absolute; top:1220px; left:2510px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[29].seed1 + " " + lookUp(myGame[29].team1) +" " + myGame[29].score1}}</FONT></div>
+<div id="H19" style="position:absolute; top:1285px; left:2510px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[29].seed2 + " " + lookUp(myGame[29].team2) +" " + myGame[29].score2}}</FONT></div>
+<div id="H21" style="position:absolute; top:1315px; left:2510px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[26].seed1 + " " + lookUp(myGame[26].team1) +" " + myGame[26].score1}}</FONT></div>
+<div id="H23" style="position:absolute; top:1380px; left:2510px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[26].seed2 + " " + lookUp(myGame[26].team2) +" " + myGame[26].score2}}</FONT></div>
+<div id="H25" style="position:absolute; top:1410px; left:2510px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[30].seed1 + " " + lookUp(myGame[30].team1) +" " + myGame[30].score1}}</FONT></div>
+<div id="H27" style="position:absolute; top:1475px;left:2510px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[30].seed2 + " " + lookUp(myGame[30].team2) +" " + myGame[30].score2}}</FONT></div>
+<div id="H28" style="position:absolute; top:1505px;left:2510px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[25].seed1 + " " + lookUp(myGame[25].team1) +" " + myGame[25].score1}}</FONT></div>
+<div id="H31" style="position:absolute; top:1570px;left:2510px ; width:200px; height:15px; border:3px solid #000; "><FONT SIZE="3" COLOR="000000">{{myGame[25].seed2 + " " + lookUp(myGame[25].team2) +" " + myGame[25].score2}}</FONT></div>
+
+    
+
+<!-- round2 east -->
+  <div id="H8"  style="position:absolute; top:25px ; left:240px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[32].seed1 + " " +lookUp(myGame[32].team1) +" " + myGame[32].score1}}</FONT></div>
+  <div id="H10" style="position:absolute; top:120px; left:240px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[32].seed2 + " " + lookUp(myGame[32].team2) +" " + myGame[32].score2}}</FONT></div>
+  <div id="H12" style="position:absolute; top:310px; left:240px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[35].seed1 + " " + lookUp(myGame[35].team1) +" " + myGame[35].score1}}</FONT></div>
+  <div id="H14" style="position:absolute; top:215px; left:240px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[35].seed2 + " " + lookUp(myGame[35].team2) +" " + myGame[35].score2}}</FONT></div>
+  <div id="H9"  style="position:absolute; top:405px; left:240px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[34].seed2 + " " + lookUp(myGame[34].team2) +" " + myGame[34].score2}}</FONT></div>
+  <div id="H11" style="position:absolute; top:500px; left:240px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[34].seed1 + " " + lookUp(myGame[34].team1) +" " + myGame[34].score1}}</FONT></div>
+  <div id="H13" style="position:absolute; top:595px; left:240px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[33].seed2 + " " + lookUp(myGame[33].team2) +" " + myGame[33].score2}}</FONT></div>
+  <div id="H15" style="position:absolute; top:690px;left:240px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[33].seed1 + " " + lookUp(myGame[33].team1) +" " + myGame[33].score1}}</FONT></div>
+
+
+<!-- round2 south -->
+  <div id="H8"  style="position:absolute; top:855px ; left:240px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[36].seed1 + " " + lookUp(myGame[36].team1) +" " + myGame[36].score1}}</FONT></div>
+  <div id="H10" style="position:absolute; top:950px; left:240px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[36].seed2 + " " + lookUp(myGame[36].team2) +" " + myGame[36].score2}}</FONT></div>
+  <div id="H12" style="position:absolute; top:1045px; left:240px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[39].seed2 + " " + lookUp(myGame[39].team2) +" " + myGame[39].score2}}</FONT></div>
+  <div id="H14" style="position:absolute; top:1140px; left:240px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[39].seed1 + " " + lookUp(myGame[39].team1) +" " + myGame[39].score1}}</FONT></div>
+  <div id="H9"  style="position:absolute; top:1235px; left:240px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[38].seed2 + " " + lookUp(myGame[38].team2) +" " + myGame[38].score2}}</FONT></div>
+  <div id="H11" style="position:absolute; top:1330px; left:240px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[38].seed1 + " " + lookUp(myGame[38].team1) +" " + myGame[38].score1}}</FONT></div>
+  <div id="H13" style="position:absolute; top:1425px; left:240px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[37].seed2 + " " + lookUp(myGame[37].team2) +" " + myGame[37].score2}}</FONT></div>
+  <div id="H15" style="position:absolute; top:1520px;left:240px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[37].seed1+ " " + lookUp(myGame[37].team1) +" " + myGame[37].score1}}</FONT></div>
+
+
+
+<!-- round2 midwest -->
+<div id="H8"  style="position:absolute; top:30px ; left:2280px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[40].seed1 + " " + lookUp(myGame[40].team1 )+" " + myGame[40].score1}}</FONT></div>
+<div id="H10" style="position:absolute; top:125px; left:2280px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[40].seed2 + " " + lookUp(myGame[40].team2 )+" " + myGame[40].score2}}</FONT></div>
+<div id="H12" style="position:absolute; top:220px; left:2280px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[43].seed2 + " " + lookUp(myGame[43].team2 )+" " + myGame[43].score2}}</FONT></div>
+<div id="H14" style="position:absolute; top:315px; left:2280px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[43].seed1 + " " + lookUp(myGame[43].team1 )+" " + myGame[43].score1}}</FONT></div>
+<div id="H9"  style="position:absolute; top:410px; left:2280px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[42].seed2 + " " + lookUp(myGame[42].team2 )+" " + myGame[42].score2}}</FONT></div>
+<div id="H11" style="position:absolute; top:505px; left:2280px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[42].seed1 + " " + lookUp(myGame[42].team1 )+" " + myGame[42].score1}}</FONT></div>
+<div id="H13" style="position:absolute; top:600px; left:2280px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[41].seed2 + " " + lookUp(myGame[41].team2) +" " + myGame[41].score2}}</FONT></div>
+<div id="H15" style="position:absolute; top:695px;left:2280px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[41].seed1 + " " + lookUp(myGame[41].team1) +" " + myGame[41].score1}}</FONT></div>
+
+
+<!-- round2 west -->
+<div id="H8"  style="position:absolute; top:860px; left:2280px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[44].seed1 + " " + lookUp(myGame[44].team1) +" " + myGame[44].score1}}</FONT></div>
+<div id="H10" style="position:absolute; top:955px;  left:2280px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[44].seed2 + " " + lookUp(myGame[44].team2) +" " + myGame[44].score2}}</FONT></div>
+<div id="H12" style="position:absolute; top:1050px; left:2280px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[47].seed2 + " " + lookUp(myGame[47].team2) +" " + myGame[47].score2}}</FONT></div>
+<div id="H14" style="position:absolute; top:1145px; left:2280px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[47].seed1 + " " + lookUp(myGame[47].team1) +" " + myGame[47].score1}}</FONT></div>
+<div id="H9"  style="position:absolute; top:1240px; left:2280px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[46].seed2 + " " + lookUp(myGame[46].team2) +" " + myGame[46].score2}}</FONT></div>
+<div id="H11" style="position:absolute; top:1335px; left:2280px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[46].seed1 + " " + lookUp(myGame[46].team1) +" " + myGame[46].score1}}</FONT></div>
+<div id="H13" style="position:absolute; top:1430px; left:2280px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[45].seed2 + " " + lookUp(myGame[45].team2) +" " + myGame[45].score2}}</FONT></div>
+<div id="H15" style="position:absolute; top:1525px; left:2280px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[45].seed1 + " " + lookUp(myGame[45].team1) +" " + myGame[45].score1}}</FONT></div>
+
+
+
+
+<!-- round3 SWEET 16 left -->
+<div id="H4"  style="position:absolute; top:70px; left:470px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[48].seed1 + " " + lookUp(myGame[48].team1) +" " + myGame[48].score1}} </FONT></div>
+<div id="H6"  style="position:absolute; top:265px; left:470px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[48].seed2 + " " + lookUp(myGame[48].team2) +" " + myGame[48].score2}}</FONT></div>
+<div id="H5"  style="position:absolute; top:455px; left:470px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[49].seed2 + " " + lookUp(myGame[49].team2) +" " + myGame[49].score2}}</FONT></div>
+<div id="H7"  style="position:absolute; top:645px;left:470px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[49].seed1 + " " + lookUp(myGame[49].team1) +" " + myGame[49].score1}}</FONT></div>
+
+<div id="H4"  style="position:absolute; top:900px; left:470px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[50].seed1 + " " + lookUp(myGame[50].team1) +" " + myGame[50].score1}}</FONT></div>
+<div id="H6"  style="position:absolute; top:1095px; left:470px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[50].seed2 + " " +lookUp (myGame[50].team2) +" " + myGame[50].score2}}</FONT></div>
+<div id="H5"  style="position:absolute; top:1285px; left:470px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[51].seed1 + " " + lookUp(myGame[51].team1) +" " + myGame[51].score1}}</FONT></div>
+<div id="H7"  style="position:absolute; top:1475px;left:470px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[51].seed2 + " " + lookUp(myGame[51].team2) +" " + myGame[51].score2}}</FONT></div>
+
+
+<!-- round3 SWEET 16 right -->
+<div id="H4"  style="position:absolute; top:75px; left:2050px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[52].seed1 + " " + lookUp(myGame[52].team1) +" " + myGame[52].score1}}</FONT></div>
+<div id="H6"  style="position:absolute; top:270px; left:2050px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[52].seed2 + " " + lookUp(myGame[52].team2) +" " + myGame[52].score2}}</FONT></div>
+<div id="H5"  style="position:absolute; top:460px; left:2050px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[53].seed2 + " " + lookUp(myGame[53].team2) +" " + myGame[53].score2}}</FONT></div>
+<div id="H7"  style="position:absolute; top:650px;left:2050px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[53].seed1 + " " + lookUp(myGame[53].team1) +" " + myGame[53].score1}}</FONT></div>
+
+<div id="H4"  style="position:absolute; top:905px; left:2050px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[54].seed1 + " " + lookUp(myGame[54].team1) +" " + myGame[54].score1}}</FONT></div>
+<div id="H6"  style="position:absolute; top:1100px; left:2050px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[54].seed2 + " " + lookUp(myGame[54].team2) +" " + myGame[54].score2}}</FONT></div>
+<div id="H5"  style="position:absolute; top:1290px; left:2050px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[55].seed2 + " " + lookUp(myGame[55].team2) +" " + myGame[55].score2}}</FONT></div>
+<div id="H7"  style="position:absolute; top:1480px;left:2050px; width:200px; height:45px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[55].seed1 + " " + lookUp(myGame[55].team1) +" " + myGame[55].score1}}</FONT></div>
+
+
+<!-- round4 ELITE 8 left -->
+<div id="H2"  style="position:absolute; top:160px; left:700px; width:200px; height:60px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[56].seed1 + " " + lookUp(myGame[56].team1) +" " + myGame[56].score1}}</FONT></div>
+<div id="H3"  style="position:absolute; top:545px; left:700px; width:200px; height:60px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[56].seed2 + " " + lookUp(myGame[56].team2) +" " + myGame[56].score2}}</FONT></div>
+
+<div id="H2"  style="position:absolute; top:985px; left:700px; width:200px; height:60px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[57].seed1 + " " + lookUp(myGame[57].team1) +" " + myGame[57].score1}}</FONT></div>
+<div id="H3"  style="position:absolute; top:1370px; left:700px; width:200px; height:60px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[57].seed2 + " " + lookUp(myGame[57].team2) +" " + myGame[57].score2}}</FONT></div>
+
+
+<!-- round4 ELITE 8 right -->
+<div id="H2"  style="position:absolute; top:160px; left:1820px; width:200px; height:60px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[58].seed1 + " " + lookUp(myGame[58].team1) +" " + myGame[58].score1}} </FONT></div>
+<div id="H3"  style="position:absolute; top:545px; left:1820px; width:200px; height:60px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[58].seed2 + " " + lookUp(myGame[58].team2) +" " + myGame[58].score2}}</FONT></div>
+
+<div id="H2"  style="position:absolute; top:985px; left:1820px; width:200px; height:60px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[59].seed1 + " " + lookUp(myGame[59].team1) +" " + myGame[59].score1}}</FONT></div>
+<div id="H3"  style="position:absolute; top:1370px; left:1820px; width:200px; height:60px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[59].seed2 + " " + lookUp(myGame[59].team2) +" " + myGame[59].score2}}</FONT></div>
+    
+    
+    <!-- round5 FINAL 4 left -->
+<div id="H0"  style="position:absolute; top:355px; left:910px;width:200px; height:60px; border:3px solid #000; "><FONT SIZE="6" COLOR="000000">{{myGame[60].seed1 + " " + lookUp(myGame[60].team1) +" " + myGame[60].score1}}</FONT></div>
+<div id="H0"  style="position:absolute; top:1165px; left:910px;width:200px; height:60px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[60].seed2 + " " + lookUp(myGame[60].team2) +" " + myGame[60].score2}}</FONT></div>
+    
+    <!-- round5 FINAL 4 right -->
+<div id="H0"  style="position:absolute; top:355px; left:1610px;width:200px; height:60px; border:3px solid #000; "><FONT SIZE="6" COLOR="000000">{{myGame[61].seed1 + " " + lookUp(myGame[61].team1) +" " + myGame[61].score1}}</FONT></div>
+<div id="H0"  style="position:absolute; top:1165px; left:1610px;width:200px; height:60px; border:3px solid #000; "><FONT SIZE="5" COLOR="000000">{{myGame[61].seed2 + " " + lookUp(myGame[61].team2) +" " + myGame[61].score2}}</FONT></div>
+
+
+<!-- round6 CHAMPTIONSHIP LEFT -->
+<div id="H0"  style="position:absolute; top:515px; left:1100px;width:200px; height:60px; border:3px solid #000; "><FONT SIZE="6" COLOR="000000">{{myGame[62].seed1 + " " + lookUp(myGame[62].team1) +" " + myGame[62].score1}}</FONT></div>
+<!-- round6 CHAMPTIONSHIP RIGHT -->
+<div id="H0"  style="position:absolute; top:1005px; left:1420px;width:200px; height:60px; border:3px solid #000; "><FONT SIZE="6" COLOR="000000">{{myGame[62].seed2 + " " + lookUp(myGame[62].team2) +" " + myGame[62].score2}}</FONT></div>
+ 
+<!-- CHAMPION-->
+<div id="H0"  style="position:absolute; top:700px; left:1260px; "><FONT SIZE="8" color="124578">CHAMPION </FONT></div>
+<div id="H0"  style="position:absolute; top:750px; left:1200px;width:350px; height:80px; border:10px solid rgb(230, 77, 16); "><FONT SIZE="10" COLOR="000000">{{myGame[62].seed1+ " "+ lookUp(myGame[62].team1) }}</FONT></div>
+
+
+
+
+
+
+
+
+<div id="H0"  style="position:absolute; top:830px; left:1315px; ">
+
+
+  <p><a href= "index.html" class="myButton">Home</a></p></div>
+  <style>
+    .myButton {
+        color: rgb(241, 111, 4); font-size: 30px; line-height: 20px; padding: 24px; border-radius: 12px; font-family: Georgia, serif; font-weight: normal; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; background-image: linear-gradient(to right, rgb(1, 20, 9) 0%, rgb(1, 26, 11) 50%, rgb(2, 20, 11) 100%); box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px; border: 2px solid rgb(2, 94, 37); display: inline-block;}
+        .myButton:hover {
+        background: rgb(214, 228, 218); }
+        .myButton:active {
+          background: rgb(219, 231, 222); }
+</style>
+
+  
+    
+
+    
+      
+        
+        
+        
+        
+        
+        
+        <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope, $http) {
+          $http.get("http://localhost:8080/game/1")
+          .then(function(response) {
+              $scope.myGame = response.data;
+          });
+
+          $http.get("http://localhost:8080/team")
+          .then(function(response) {
+              $scope.myTeam = response.data;
+          });        
+
+
+          $scope.BDE = function(){
+            $scope.swing = "Woosh";
+          }
+
+
+$scope.lookUp = function(tid){
+  console.log(tid);
+  console.log($scope.myTeam);
+  var checkThis = $scope.myTeam;
+  for(var ck = 0; ck < checkThis.length; ck ++){
+    if (checkThis[ck].id == tid){
+    console.log(ck);
+    return checkThis[ck].name;
+    }
+  }
+  return 'ddd';
+}
+
+        });
+        
+        
+        
+        </script>
+        
+
+
+
+
+
+
+
+
+
+
+    
+  
+</body>
+</html>
